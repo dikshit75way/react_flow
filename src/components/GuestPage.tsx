@@ -113,12 +113,12 @@ export function GuestPage({ nodes, edges }: GuestPageProps) {
               className="space-y-10"
             >
               <div className="space-y-6">
-                <div className="flex items-center gap-3 text-indigo-600 font-black tracking-widest text-[10px] uppercase">
+                <div className="flex items-center gap-3 text-indigo-600 font-black tracking-[0.2em] text-[10px] uppercase font-outfit">
                   <div className="h-[6px]  w-8 bg-indigo-600" />
                   Step {history.length + 1} of Workflow
                 </div>
                 
-                <h1 className="text-2xl md:text-4xl font-black text-slate-800">
+                <h1 className="text-2xl md:text-4xl font-black text-slate-800 font-outfit tracking-tight">
                   {data.question}
                 </h1>
               </div>
@@ -143,7 +143,7 @@ export function GuestPage({ nodes, edges }: GuestPageProps) {
                       `}>
                         <MessageSquare className="w-5 h-5" />
                       </div>
-                      <span className={`text-lg font-bold ${selectedAnswerId === answer.id ? 'text-indigo-900' : 'text-slate-700'}`}>
+                      <span className={`text-lg font-bold font-outfit ${selectedAnswerId === answer.id ? 'text-indigo-900' : 'text-slate-700'}`}>
                         {answer.text}
                       </span>
                     </div>

@@ -4,8 +4,10 @@
 
 @layer base {
   body {
-    @apply antialiased text-slate-900 bg-slate-50;
-    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    @apply antialiased text-slate-900 bg-slate-50 font-outfit;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 

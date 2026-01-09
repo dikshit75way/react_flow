@@ -39,7 +39,7 @@ const QuestionNode = ({ id, data, selected }: NodeProps<AppNode>) => {
       animate={{ scale: 1, opacity: 1 }}
       className={`group relative rounded-2xl border transition-all duration-500 overflow-visible
         ${selected ? 'border-indigo-400 ring-8 ring-indigo-500/10 premium-shadow' : 'border-slate-200/60 shadow-xl'}
-        ${isAdmin ? 'w-[300px] bg-white' : 'w-[450px] p-8 glass-card'}
+        ${isAdmin ? 'min-w-[400px] max-w-[600px] bg-white' : 'min-w-[500px] max-w-[800px] p-8 glass-card'}
       `}
     >
       <Handle 
@@ -60,29 +60,36 @@ const QuestionNode = ({ id, data, selected }: NodeProps<AppNode>) => {
       
       <div className="flex flex-col gap-4 p-5">
         <div className="flex items-start gap-3">
-          <div className="bg-slate-100 p-2 rounded-xl text-slate-600 shrink-0">
+          {/* <div className="bg-slate-100 p-2 rounded-xl text-slate-600 shrink-0">
             <AlignLeft className="w-5 h-5" />
-          </div>
+          </div> */}
           
-          <div className="flex-1">
-            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1 block">Question Path</label>
+          <div className="flex-1 w-full">
+            <label className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2 block font-outfit">Question Path</label>
             {isAdmin ? (
               <textarea 
-                className="w-full bg-slate-50 border-none rounded-lg p-3 text-sm font-bold text-slate-800 placeholder:text-slate-300 focus:ring-2 focus:ring-indigo-500 transition-all resize-none leading-relaxed" 
+                className="w-full bg-slate-50 border-none rounded-xl p-4 text-sm font-bold text-slate-800 placeholder:text-slate-300 focus:ring-2 focus:ring-indigo-500 transition-all resize-none leading-relaxed font-outfit overflow-hidden" 
                 value={nodeData.question} 
-                onChange={onQuestionChange}
+                onChange={(e) => {
+                  e.target.style.height = 'auto';
+                  e.target.style.height = `${e.target.scrollHeight}px`;
+                  onQuestionChange(e);
+                }}
+                onFocus={(e) => {
+                  e.target.style.height = 'auto';
+                  e.target.style.height = `${e.target.scrollHeight}px`;
+                }}
                 placeholder="Type your question here..."
-                rows={2}
               />
             ) : (
-              <h2 className="text-2xl font-black text-slate-900 leading-tight">{nodeData.question}</h2>
+              <h2 className="text-2xl font-black text-slate-900 leading-tight font-outfit w-full break-words">{nodeData.question}</h2>
             )}
           </div>
         </div>
         
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           <div className="flex items-center justify-between px-1">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Available Options</span>
+            <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] font-outfit">Available Options</span>
           </div>
 
           <div className="flex flex-col gap-2">

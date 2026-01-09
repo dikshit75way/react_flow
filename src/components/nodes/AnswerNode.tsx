@@ -29,8 +29,8 @@ const AnswerNode = ({ data, selected, id }: NodeProps<AppNode>) => {
         </div>
         
         <div className="flex-1">
-          <label className="text-[10px] font-bold text-emerald-600/50 uppercase tracking-wider block mb-0.5">Response</label>
-          <div className="text-sm font-black text-emerald-900 leading-tight">
+          <label className="text-[10px] font-black text-emerald-600/50 uppercase tracking-[0.2em] block mb-1 font-outfit">Response</label>
+          <div className="text-sm font-black text-emerald-900 leading-tight font-outfit">
             {nodeData.answer}
           </div>
         </div>

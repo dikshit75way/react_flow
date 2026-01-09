@@ -35,6 +35,10 @@ export default {
           '100%': { transform: 'scale(1)' },
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif'],
+      },
     },
   },
   plugins: [],
